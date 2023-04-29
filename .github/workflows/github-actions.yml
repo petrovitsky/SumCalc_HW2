@@ -2,17 +2,15 @@ name: Test
 on:
   pull_request:
     test_job:
-      runs-on: ubuntu-latest
-      steps:
+      jobs:
+        runs-on: ubuntu-latest
+        steps:
         - uses: actions/checkout@v3
         - name: Set up JDK 11
           uses: actions/setup-java@v3
           with:
-            java-version: '11'
-            distribution: 'temurin'
+              java-version: '11'
+              distribution: 'temurin'
         - name: Validate Gradle wrapper
-          uses: gradle/wrapper-validation-action@ccb4328a959376b642e027874838f60f8e596de3
-    jobs:
-      test_job:
-        steps:
+        uses: gradle/wrapper-validation-action@ccb4328a959376b642e027874838f60f8e596de3
           - run: ./gradlew test
