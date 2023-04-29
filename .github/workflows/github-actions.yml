@@ -1,6 +1,7 @@
 on:
   pull_request:
     jobs:
-      steps:
-        run: gradlew test
+      test_job:
+        steps:
+          - run: gradlew test
 
