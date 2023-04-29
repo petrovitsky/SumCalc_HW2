@@ -1,8 +1,9 @@
 name: Test
 on:
   pull_request:
+    test_job:
+      runs-on: ubuntu-latest
     jobs:
       test_job:
         steps:
           - run: ./gradlew test
-
