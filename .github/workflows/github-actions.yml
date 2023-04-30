@@ -12,6 +12,6 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
-      - run: ./chmod +x gradlew test
+      - run: ./gradlew test
 
 
